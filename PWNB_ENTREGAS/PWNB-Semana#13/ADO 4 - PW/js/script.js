@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('form');
-    const tableBody = document.querySelector('tbody');
+    // const tableBody = document.querySelector('tbody');
     const alertDiv = document.querySelector('.alert');
+    const listarBtn = document.getElementById("listarBtn");
 
     form.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -45,20 +46,20 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Criar uma nova linha na tabela com os dados do cliente
-        const newRow = document.createElement('tr');
-        newRow.innerHTML = `
-        <td>${nome}</td>
-        <td>${dataNascimento}</td>
-        <td>${endereco}, ${numero}</td>
-        <td>${cidade}</td>
-        <td>
-            <button class="btn btn-primary"><i class="bi bi-pencil"></i></button>
-            <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
-        </td>`;
+        // // Criar uma nova linha na tabela com os dados do cliente
+        // const newRow = document.createElement('tr');
+        // newRow.innerHTML = `
+        // <td>${nome}</td>
+        // <td>${dataNascimento}</td>
+        // <td>${endereco}, ${numero}</td>
+        // <td>${cidade}</td>
+        // <td>
+        //     <button class="btn btn-primary"><i class="bi bi-pencil"></i></button>
+        //     <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
+        // </td>`;
 
-        // Adicionar a nova linha à tabela
-        tableBody.appendChild(newRow);
+        // // Adicionar a nova linha à tabela
+        // tableBody.appendChild(newRow);
 
         // Limpar os campos do formulário após adicionar o cliente
         form.reset();
@@ -105,14 +106,9 @@ document.addEventListener('DOMContentLoaded', function () {
         limparInputs();
     });
 
-
-
-    // Obtém uma referência para o botão com o ID "listarBtn"
-    var listarBtn = document.getElementById("listarBtn");
-
     // Adiciona um ouvinte de evento de clique ao botão
     listarBtn.addEventListener("click", function () {
-        // Redireciona o usuário para a nova página (substitua "novaPagina.html" pelo URL desejado)
+        // Redireciona o usuário para a nova página
         window.location.href = "table.html";
     });
 });
