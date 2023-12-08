@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registre-se | Kilobyte</title>
+        <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+        <!-- Main Common File -->
+        <link rel="stylesheet" href="/css/common.css" />
+        <!-- Main File For CSS -->
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <!-- Import Popper.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+        <!-- Import JQuery -->
+		<script type="text/javascript" src="/vendor/jquery/jquery-3.6.4.min.js"></script>
+        <!-- BACKGROUND VIDEO -->
+        <div class="video_wrap">
+			<div id="video-viewport">
+				<video class="video-file" preload="" loop="" autobuffer="" autoplay="" muted="" width="1920" height="1080">
+					<source src="/assets/video/background.mp4" type="video/mp4">
+				</video>
+			</div>
+		</div>
+		<!-- SCRIPT BACKGROUND VIDEO-->
+		<script type="text/javascript" src="/vendor/js/background-video.js"></script>
+        <!-- Start Header -->
+        <header>
+            <div class="container">
+                <a class="logo" href="/index.html">&nbsp;</a>
+                <nav>
+                    <ul class="menu-links">
+                        <a class="mark" href="#"><i class="fa-solid fa-xmark fa-lg fa-fw"></i></a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./category.html">Categorias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-modal-open" href="#" rel="sobre">Sobre nós</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-modal-open" href="#" rel="contato">Contato</a>
+                        </li>
+                        <!-- Caso o usuario não esteja logado -->
+                        <li class="botao1 nav-item">
+                            <a class="nav-link" href="/pages/login.html"><i class="fa-solid fa-user fa-fw"></i></a>
+                        </li>
+                        <!-- Caso o usuario já tenha logado -->
+                        <li class="botao2 nav-item dropdown-custom">
+                            <a class="nav-link fa-solid fa-user fa-fw" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                &nbsp;
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="/pages/profile.html">Perfil</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#" onclick="logout()">Logout</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/cart.html"><i class="fa-solid fa-cart-shopping fa-fw"></i></a>
+                        </li>
+                    </ul>
+                    <!-- mobile  -->
+                    <a class="botao3 user-icon " href="/pages/login.html" rel="login"><i class="fa-solid fa-user fa-lg fa-fw"></i></a>
+                    <!-- Caso o usuario já tenha logado -->
+                    <div class="botao4">
+                        <a class="user-icon-custom nav-link fa-solid fa-user fa-fw" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="height: 20px;">
+                            &nbsp;
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="/pages/profile.html">Perfil</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" onclick="logout()">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a class="cart-icon" href="/pages/cart.html"><i class="fa-solid fa-cart-shopping fa-lg fa-fw"></i></a>
+                    <a class="menu-bars" href="#"><i class="fa-solid fa-outdent fa-lg fa-fw"></i></a>
+                </nav>
+            </div>
+        </header>
+        <!-- End Header -->
+        <!-- START LOGIN -->
+        <section class="vh-100">
+            <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+                <div class="container container-login">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                            <div class="card" style="border-radius: 15px;">
+                                <div class="card-body p-5">
+                                    <h2 class="text-center mb-4">Registre-se</h2>
+                                    <form>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-floating mb-4">
+                                                    <input type="text" class="form-control form-control-lg" id="nome" placeholder="Nome">
+                                                    <label for="nome">Nome</label>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-floating mb-4">
+                                                    <input type="text" class="form-control form-control-lg" id="sobrenome" placeholder="Sobrenome">
+                                                    <label for="sobrenome">Sobrenome</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-floating mb-4">
+                                            <input type="email" class="form-control form-control-lg" id="e-mail-cad" placeholder="e-mail">
+                                            <label for="e-mail">E-mail</label>
+                                        </div>
+                                        <div class="form-floating mb-4">
+                                            <input type="password" class="form-control form-control-lg" id="password" placeholder="password">
+                                            <label for="password">Senha</label>
+                                        </div>
+                                        <div class="form-check d-flex justify-content-center mb-4">
+                                            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                                            <label class="form-check-label" for="">
+                                                Li e estou de acordo com os <a href="#" class="text-body"><u>Termos de Serviço</u></a>
+                                            </label>
+                                        </div>
+        
+                                        <div class="d-flex justify-content-center">
+                                            <button type="button"
+                                                class="btn btn-primary btn-block btn-lg">Register</button>
+                                        </div>
+        
+                                        <p class="text-center text-muted mt-5 mb-0">Já tem uma conta? <a href="/pages/login.html"
+                                            class="fw-bold text-body"><u>Faça Login</u></a></p>
+        
+                                    </form>
+        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END LOGIN -->
+
+        <!-- Start Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-top">
+                    <div class="info">
+                        <img src="" alt="" />
+                        <h4>Contato</h4>
+                        <div class="details">
+                            <span class="bold">Endereço:</span>
+                            <span class="light">Avenida Lorem ipsum ipsum</span>
+                        </div>
+                        <div class="details">
+                            <span class="bold">Telefone:</span>
+                            <span class="light">11 91234 5678</span>
+                        </div>
+                        <div class="details">
+                            <span class="bold">Horario de atendimento:</span>
+                            <span class="light">9:00-16:00</span>
+                        </div>
+                        <h4>&nbsp;</h4>
+                        <div class="social">
+                            <a href="#"><i class="fa-brands fa-facebook-f fa-fw"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter fa-fw"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram fa-fw"></i></a>
+                            <a href="#"><i class="fa-brands fa-youtube fa-fw"></i></a>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <h4>Sobre</h4>
+                        <ul>
+                            <li>
+                                <a href="#">Sobre Nós</a>
+                            </li>
+                            <li><a href="#">Lorem ipsum, dolor sit</a></li>
+                            <li><a href="#">Lorem ipsum, dolor sit</a></li>
+                            <li><a href="#">Lorem ipsum, dolor sit</a></li>
+                            <li><a href="#">Lorem ipsum, dolor sit</a></li>
+                        </ul>
+                    </div>
+                    <div class="info">
+                        <h4>Lorem ipsum, dolor sit</h4>
+                        <ul>
+                            <li>
+                                <a href="#">Lorem ipsum, dolor sit</a>
+                            </li>
+                            <li><a href="#">Lorem ipsum, dolor sit</a></li>
+                            <li><a href="#">Lorem ipsum, dolor sit</a></li>
+                            <li><a href="#">Lorem ipsum, dolor sit</a></li>
+                            <li><a href="#">Lorem ipsum, dolor sit</a></li>
+                        </ul>
+                    </div>
+                    <div class="info">
+                        <h4>Lorem ipsum, dolor sit</h4>
+                        <p>Lorem ipsum, dolor sit</p>
+                        <div class="pay">
+                            <div class="app">
+                                <img src="/assets/images/miscellaneous/gpay.webp" width="80px" alt="" />
+                            </div>
+                            <div class="play">
+                                <img src="/assets/images/miscellaneous/apple-pay.webp" width="150px" alt="" />
+                            </div>
+                        </div>
+                        <p>Lorem ipsum, dolor sit</p>
+                    </div>
+                <div class="footer-bottom">
+                    <p class="copyright">Kilobyte &copy; 2023 Todos os direitos reservados</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Modal Body -->
+        <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+        <div class="modal fade custom-modal" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
+            aria-labelledby="modalTitleId" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitleId">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Modal -->
+
+        <!-- Start Contact Modal -->
+        <div id="contato" class="visually-hidden">
+            <form action="post" class="form">
+                <!-- Nome -->
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" name="nome" class="form-control" placeholder="Digite seu nome"
+                        aria-describedby="helpNome">
+                    <small id="helpNome" class="text-muted">Digite um nome valido</small>
+                </div>
+                <!-- Email -->
+                <div class="mb-3">
+                    <label for="e-mail" class="form-label">E-mail</label>
+                    <input type="text" name="e-mail" class="form-control" placeholder="Digite seu e-mail"
+                        aria-describedby="helpE-mail">
+                    <small id="helpE-mail" class="text-muted">Digite um E-mail valido</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+            <div class="alert alert-primary" role="alert">
+                <p>Preencha todos os campos que entraremos <br>em contato com você o mais breve possivel</p>
+            </div>
+        </div>
+        <!-- End Contact Modal -->
+
+        <!-- Start About Modal -->
+        <div id="sobre" class="visually-hidden">
+            <section class="about">
+                <h2>Sobre Nós</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur</p>
+            </section>
+            <section class="about-us">
+                <div class="container">
+                    <div class="about-text">
+                        <h1>Quem Somos?</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa aut, excepturi optio quo similique odio expedita adipisci assumenda dolor provident accusantium consequuntur omnis sit nam deleniti mollitia obcaecati, quidem explicabo!</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- End About Modal -->
+
+        <!-- Bootstrap -->
+        <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+        <!-- jquery import -->
+        <script src="/vendor/jquery/jquery-3.6.4.min.js"></script>
+        <!-- FontAwesome Libirary JS -->
+        <script src="/vendor/js/all.min.js"></script>
+        <!-- Main File For JS -->
+        <script src="/vendor/js/main.js"></script>
+        <!-- import Modal -->
+        <script src="/vendor/js/modal.js"></script>
+        <!-- header script -->
+        <script src="/vendor/js/header.js"></script>
+    </body>
+</html>
